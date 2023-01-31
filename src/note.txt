@@ -1,0 +1,74 @@
+-API call in Javascript-
+ ----------------------
+ AJAX
+ -- XMLhttp
+ -- fetch
+ -- asynch await
+
+ useEffect is use as NgOninit()
+
+
+ REDIRECTION IN REACT
+ -------------------------
+react-router-dom = is use in react for redirection
+this module is not avaliable it has to be install 
+----------->  npm i  react-router-dom
+
+
+routing is do in app.js 
+import { BrowserRouter as Router ->all routing need components
+,Routes ->  to set paths for each components
+,Route ->morethan one path
+ } from 'react-router-dom';
+
+
+useParams: hoook to access params from component url
+
+REDUX
+---
+
+Couplling - ----- > many connection between parent and child component
+props drilling -- > inn coupling if any intermediate component have any error all  the 
+                    other childs will not work.
+
+     To  avoid props drilling we need to reduce coupling and mske all the component indepedent
+     for this react introduced a new technology  --react intriduced a state managemrnt technology
+     called REDUX
+
+redux process
+------------
+create a new js file to keep the state , all the component can access the js file.
+the component only can access the data from the js file
+ but they can't update the data in the js file
+ 
+there are 4 pillars 
+
+ Action - a file where all the logics to update the state
+
+ Dispatch - method used to  dispatch the logic in action 
+            file when the component need state updation.
+
+ Reducer - update the data in js file according to the 
+           payload response get action file
+
+libaries to apply  redux 
+------------------------
+1. REDUX
+2. REACT REDUX
+3. REDUX-THUNK
+npm i redux  react-redux redux-thunk
+
+createStore() -- method in redux used to create store in js file 
+               two argument 
+               1. Reducer
+               2. middleware (use to make synchronous redux into asynchronous)
+
+   applyMiddleware() - method in redux to apply middleware            
+
+   CombineReducers() - method in Redux used to combine all the reducers in js file
+
+   thunk() --- use to create middleware
+
+   1. create store 
+   2, apply the store in index.js 
+        provider its a tag used to pass the store{react-redux}
