@@ -6,24 +6,25 @@ import Col from 'react-bootstrap/Col';
 import { Image } from 'react-bootstrap';
 import Operatingtime from './Operatingtime';
 import Review from './Review';
+import { useDispatch,useSelector } from 'react-redux';
+
 function ViewRest() {
   const params = useParams()
-  // console.log(params.id);
-
-
-  const [allrestaurent, setAllrestaurent] = useState([])
-
-  const getrestarentdata = async () => {
-    await fetch('/restaurants.json')
-      .then(data => { data.json().then(result => { setAllrestaurent(result.restaurants) }) })
-  }
-  const restData = allrestaurent.find(item => item.id == params.id)
+  // const [allrestaurent, setAllrestaurent] = useState([])
+  // const getrestarentdata = async () => {
+  //   await fetch('/restaurants.json')
+  //     .then(data => { data.json().then(result => { setAllrestaurent(result.restaurants) }) })
+  // }
   // console.log(restData);
   //  console.log(allrestaurent);
-  useEffect(() => { getrestarentdata() }, [])
+  useEffect(() => { 
+    // getrestarentdata()
+   }, [])
 
+  const result=useSelector(state=>state.restaurentReducer)
+  const {restaurantList}=result
+  const restData = restaurantList.find(item => item.id == params.id)
 
-  
   return (
     <>
      {
